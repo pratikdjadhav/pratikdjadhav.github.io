@@ -1,72 +1,120 @@
+/* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.6;
 }
 
+/* Container */
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
+/* Header */
 header {
-  background: linear-gradient(to right, #4e54c8, #8f94fb);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
 header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
 }
 
 header p {
-  font-size: 1.2rem;
-  font-weight: 300;
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-top: 0.5rem;
 }
 
-.section {
-  background: white;
-  margin: 30px 0;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+header .flex a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.section h2 {
-  font-size: 2rem;
-  color: #4e54c8;
-  margin-bottom: 20px;
-  border-left: 6px solid #4e54c8;
-  padding-left: 10px;
+header .flex a:hover {
+    color: #1e40af;
+    text-decoration: underline;
 }
 
-.project-item {
-  margin-bottom: 20px;
+/* Section Styling */
+section {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
-a {
-  color: #4e54c8;
-  text-decoration: none;
+section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
 }
 
-a:hover {
-  text-decoration: underline;
+section p, section .grid div p {
+    color: #4b5563;
+    font-size: 1rem;
 }
 
+/* Grid for Technical Skills */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+/* Projects */
+section .space-y-4 > div h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+section .space-y-4 > div p {
+    color: #4b5563;
+}
+
+/* Footer */
 footer {
-  background: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  border-top: 3px solid #4e54c8;
+    text-align: center;
+    color: #4b5563;
+    font-size: 0.875rem;
+    padding-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
 }
