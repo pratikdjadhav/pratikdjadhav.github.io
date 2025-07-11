@@ -3,80 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratik D. Jadhav - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-<!--     <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>DevPortfolio | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7f5af0;
+            --secondary: #2cb67d;
+            --dark: #16161a;
+            --light-dark: #242629;
+            --text: #94a1b2;
+            --white: #fffffe;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(127,90,240,0.15) 0%, rgba(44,182,125,0.15) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .project-card:nth-child(odd) {
+            border-left: 3px solid var(--primary);
+        }
+        
+        .project-card:nth-child(even) {
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <div class="container mx-auto p-6 max-w-4xl">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-gray-800">Pratik D. Jadhav</h1>
-            <p class="text-lg text-gray-600">BCA Student | Python & Web Developer | Android Enthusiast</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="mailto:pratikdjadhav@gmail.com" class="text-blue-600 hover:underline">pratikdjadhav@gmail.com</a>
-                <a href="https://github.com/pratikdjadhav" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="bg-light-dark py-4 px-6 sticky top-0 z-50 shadow-lg">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">D</div>
+                    <span class="text-white text-xl font-semibold hidden sm:block">DevPortfolio</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Home</a>
+                    <a href="#projects" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Projects</a>
+                    <a href="#skills" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Skills</a>
+                    <a href="#experience" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Experience</a>
+                    <a href="#contact" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </header>
+        </nav>
 
-        <!-- Career Objective -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Career Objective</h2>
-            <p class="text-gray-600">
-                I am a highly motivated BCA student with strong fundamentals in Python, web development, and system programming. I love building practical tools that solve real-life problems and am always exploring new technologies in backend, Android, and networking.
-            </p>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <h3 class="font-medium text-gray-700">Languages</h3>
-                    <p class="text-gray-600">C, Java, Core Python, HTML, CSS, JavaScript</p>
+        <!-- Hero Section -->
+        <section id="home" class="hero-gradient py-20 px-6">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                        Hi, I'm <span class="text-primary">Alex</span>
+                    </h1>
+                    <div class="typewriter text-2xl md:text-3xl text-secondary mb-6">
+                        Software Developer
+                    </div>
+                    <p class="text-lg mb-8 leading-relaxed">
+                        I build exceptional digital experiences through clean, efficient code and thoughtful design. Specializing in full-stack development with a focus on scalable architectures.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-primary hover:bg-purple-600 text-white px-6 py-3 rounded-md transition duration-300 font-medium">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="border border-secondary hover:bg-green-600/10 text-secondary px-6 py-3 rounded-md transition duration-300 font-medium">
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-medium text-gray-700">Web Technologies</h3>
-                    <p class="text-gray-600">Flask (Python), Node.js (basic), WebRTC, Socket.io</p>
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div class="relative">
+                        <div class="absolute top-0 left-0 w-full h-full bg-primary/20 rounded-full animate-pulse"></div>
+                        <img src="https://placehold.co/500x500" alt="Professional portrait of a software developer working at a modern workstation with dual monitors" class="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary/50">
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-medium text-gray-700">Databases</h3>
-                    <p class="text-gray-600">MySQL, Oracle DBMS</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-700">Tools & Others</h3>
-                    <p class="text-gray-600">Git, GitHub, VS Code, Java-based Android, Windows 11, API usage, basic networking, local HTTP servers</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Projects</h2>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="font-medium text-gray-700">FileShare Login App</h3>
-                    <p class="text-gray-600">Flask-based secure file-sharing app with user login, video preview, QR code support, and media streaming.</p>
-                </div>
-                <div>
-                    <h3 class="font-medium text-gray-700">YouTube Downloader (Python GUI)</h3>
-                    <p class="text-gray-600">Modular app supporting YouTube link downloads, multi-threaded downloads, and search integration.</p>
-                </div>
-
             </div>
         </section>
 
-        <!-- Education -->
-        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
-            <p class="text-gray-600">Bachelor of Computer Applications (BCA) – 6th Semester</p>
-            <p class="text-gray-600">Location: India</p>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-6 bg-light-dark">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">My <span class="text-primary">Projects</span></h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="https://placehold.co/600x400" alt="Dashboard interface showing analytics metrics with modern UI design" class="w-full h-48 object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Analytics Dashboard</h3>
+                        <p class="mb-4">A full-featured analytics platform with real-time data visualization and reporting.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">React</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Node.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
+                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="https://placehold.co/600x400" alt="Mobile app interface showing a sleek task management workflow" class="w-full h-48 object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">TaskFlow Mobile</h3>
+                        <p class="mb-4">Productivity app that helps teams collaborate on projects with task tracking and notifications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">React Native</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">GraphQL</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">AWS</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
+                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
+                        <div class="mb-4 overflow-hidden rounded-lg">
+                            <img src="https://placehold.co/600x400" alt="E-commerce platform with product listings and shopping cart functionality" class="w-full h-48 object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">ShopSphere</h3>
+                        <p class="mb-4">Modern e-commerce platform with personalized recommendations and seamless checkout.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Next.js</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">TypeScript</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
+                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="text-center text-gray-600">
-            <p>© 2025 Pratik D. Jadhav. All rights reserved.</p>
-        </footer>
-    </div>
-</body>
-</html>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-6 bg-dark">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Technical <span class="text-secondary">Skills</span></h2>
+                    <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Skill 1 -->
+                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="w-8 h-8">
+                        </div>
+                        <h3 class="text-white font-medium">JavaScript</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
+                            <div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="w-8 h-8">
+                        </div>
+                        <h3 class="text-white font-medium">React</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
+                            <div class="bg-secondary h-1.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo" class="w-8 h-8">
+                        </div>
+                        <h3 class="text-white font-medium">Node.js</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
+                            <div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons
