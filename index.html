@@ -1,355 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevPortfolio | Software Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #7f5af0;
-            --secondary: #2cb67d;
-            --dark: #16161a;
-            --light-dark: #242629;
-            --text: #94a1b2;
-            --white: #fffffe;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(127,90,240,0.15) 0%, rgba(44,182,125,0.15) 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: 2px solid var(--primary);
-            white-space: nowrap;
-            animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary) }
-        }
-        
-        .project-card:nth-child(odd) {
-            border-left: 3px solid var(--primary);
-        }
-        
-        .project-card:nth-child(even) {
-            border-left: 3px solid var(--secondary);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .active::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pratik Jadhav - Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body>
-    <div class="min-h-screen flex flex-col">
-        <!-- Navigation -->
-        <nav class="bg-light-dark py-4 px-6 sticky top-0 z-50 shadow-lg">
-            <div class="max-w-6xl mx-auto flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">D</div>
-                    <span class="text-white text-xl font-semibold hidden sm:block">DevPortfolio</span>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Home</a>
-                    <a href="#projects" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Projects</a>
-                    <a href="#skills" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Skills</a>
-                    <a href="#experience" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Experience</a>
-                    <a href="#contact" class="nav-link relative text-white py-2 hover:text-primary transition duration-300">Contact</a>
-                </div>
-                <button class="md:hidden text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
+<body class="bg-white text-gray-800 max-w-3xl mx-auto px-4 py-10">
+  <!-- Header -->
+  <header class="text-center border-b pb-6 mb-8">
+    <h1 class="text-3xl font-bold text-blue-700">Pratik Dilip Jadhav</h1>
+    <p class="text-gray-600">Kavalapur, Sangli</p>
+    <p class="text-sm mt-1">
+      📞 +91 8975720986 &nbsp;|&nbsp;
+      📧 <a href="mailto:pratikdj.5699@gmail.com" class="text-blue-600 hover:underline">pratikdj.5699@gmail.com</a>
+    </p>
+    <p class="text-sm">
+      🔗 <a href="https://www.linkedin.com/in/jadhavpratikd" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/jadhavpratikd</a>
+    </p>
+  </header>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero-gradient py-20 px-6">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
-                <div class="w-full md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                        Hi, I'm <span class="text-primary">Alex</span>
-                    </h1>
-                    <div class="typewriter text-2xl md:text-3xl text-secondary mb-6">
-                        Software Developer
-                    </div>
-                    <p class="text-lg mb-8 leading-relaxed">
-                        I build exceptional digital experiences through clean, efficient code and thoughtful design. Specializing in full-stack development with a focus on scalable architectures.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#projects" class="bg-primary hover:bg-purple-600 text-white px-6 py-3 rounded-md transition duration-300 font-medium">
-                            View Projects
-                        </a>
-                        <a href="#contact" class="border border-secondary hover:bg-green-600/10 text-secondary px-6 py-3 rounded-md transition duration-300 font-medium">
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 flex justify-center relative">
-                    <div class="relative">
-                        <div class="absolute top-0 left-0 w-full h-full bg-primary/20 rounded-full animate-pulse"></div>
-                        <img src="https://placehold.co/500x500" alt="Professional portrait of a software developer working at a modern workstation with dual monitors" class="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary/50">
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Summary -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-blue-600 mb-2">Summary</h2>
+    <p class="text-gray-700 leading-relaxed text-sm">
+      Enthusiastic and self-motivated BCA student with practical skills in Python and web development. 
+      Built a local file sharing web app using Flask and JavaScript. Eager to contribute to real-world 
+      projects and learn in an on-site development role.
+    </p>
+  </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 px-6 bg-light-dark">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">My <span class="text-primary">Projects</span></h2>
-                    <div class="w-20 h-1 bg-primary mx-auto"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="https://placehold.co/600x400" alt="Dashboard interface showing analytics metrics with modern UI design" class="w-full h-48 object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Analytics Dashboard</h3>
-                        <p class="mb-4">A full-featured analytics platform with real-time data visualization and reporting.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">React</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Node.js</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">MongoDB</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
-                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="https://placehold.co/600x400" alt="Mobile app interface showing a sleek task management workflow" class="w-full h-48 object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">TaskFlow Mobile</h3>
-                        <p class="mb-4">Productivity app that helps teams collaborate on projects with task tracking and notifications.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">React Native</span>
-                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">GraphQL</span>
-                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-medium">AWS</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
-                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="project-card bg-dark rounded-lg p-6 shadow-lg card-hover">
-                        <div class="mb-4 overflow-hidden rounded-lg">
-                            <img src="https://placehold.co/600x400" alt="E-commerce platform with product listings and shopping cart functionality" class="w-full h-48 object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">ShopSphere</h3>
-                        <p class="mb-4">Modern e-commerce platform with personalized recommendations and seamless checkout.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">Next.js</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">TypeScript</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium">PostgreSQL</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-primary hover:text-white transition duration-300 font-medium text-sm">View Project →</a>
-                            <a href="#" class="text-secondary hover:text-white transition duration-300 font-medium text-sm">Source Code →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 px-6 bg-dark">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Technical <span class="text-secondary">Skills</span></h2>
-                    <div class="w-20 h-1 bg-secondary mx-auto"></div>
-                </div>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <!-- Skill 1 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">JavaScript</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Skill 2 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">React</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-secondary h-1.5 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Skill 3 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">Node.js</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Skill 4 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/                            /devicon/icons/python/python-original.svg" alt="Python logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">Python</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-secondary h-1.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Skill 5 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">Java</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Skill 6 -->
-                    <div class="flex flex-col items-center p-6 bg-light-dark rounded-lg card-hover">
-                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="w-8 h-8">
-                        </div>
-                        <h3 class="text-white font-medium">MySQL</h3>
-                        <div class="w-full bg-gray-700 rounded-full h-1.5 mt-2">
-                            <div class="bg-secondary h-1.5 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 px-6 bg-light-dark">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Work <span class="text-primary">Experience</span></h2>
-                    <div class="w-20 h-1 bg-primary mx-auto"></div>
-                </div>
-                
-                <div class="space-y-8">
-                    <!-- Experience 1 -->
-                    <div class="bg-dark rounded-lg p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-white">Software Engineer at TechCorp</h3>
-                        <p class="text-gray-400">June 2021 - Present</p>
-                        <p class="mt-2">Developing scalable web applications and APIs using React and Node.js. Collaborating with cross-functional teams to deliver high-quality software solutions.</p>
-                    </div>
-                    
-                    <!-- Experience 2 -->
-                    <div class="bg-dark rounded-lg p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-white">Junior Developer at WebSolutions</h3>
-                        <p class="text-gray-400">Jan 2020 - May 2021</p>
-                        <p class="mt-2">Assisted in the development of client websites and applications. Gained experience in front-end technologies and agile methodologies.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 px-6 bg-dark">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Get in <span class="text-secondary">Touch</span></h2>
-                    <div class="w-20 h-1 bg-secondary mx-auto"></div>
-                </div>
-                
-                <form class="space-y-6">
-                    <div>
-                        <input type="text" placeholder="Your Name" class="w-full p-4 bg-light-dark text-white rounded-lg focus:outline-none" required>
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Your Email" class="w-full p-4 bg-light-dark text-white rounded-lg focus:outline-none" required>
-                    </div>
-                    <div>
-                        <textarea placeholder="Your Message" class="w-full p-4 bg-light-dark text-white rounded-lg focus:outline-none" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-primary hover:bg-purple-600 text-white px-6 py-3 rounded-md transition duration-300 font-medium">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-6 bg-light-dark">
-            <div class="max-w-6xl mx-auto text-center">
-                <p class="text-gray-400">© 2023 Alex. All rights reserved.</p>
-                <div class="flex justify-center space-x-4 mt-2">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
-                </div>
-            </div>
-        </footer>
+  <!-- Skills -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-blue-600 mb-2">Technical Skills</h2>
+    <div class="grid grid-cols-2 gap-y-1 text-sm">
+      <div><strong>Languages:</strong> Python, JavaScript, C, Java</div>
+      <div><strong>Web:</strong> HTML5, Web Development</div>
+      <div><strong>Database:</strong> MySQL, Oracle, MS Access</div>
+      <div><strong>Other:</strong> Website Hosting</div>
     </div>
+  </section>
+
+  <!-- Project -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-blue-600 mb-2">Projects</h2>
+    <div class="text-sm">
+      <h3 class="font-semibold">📁 Personal File Sharing App</h3>
+      <p>
+        Developed a Python + Flask-based web app to browse, upload, download, rename, delete, and stream files 
+        over a local network. Frontend built using HTML, CSS, and JavaScript.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold text-blue-600 mb-2">Education</h2>
+    <ul class="text-sm space-y-2">
+      <li>
+        <strong>Bachelor of Computer Application (BCA)</strong><br>
+        Institute of Management and Rural Development Administration, Bharati University, Sangli
+      </li>
+      <li>
+        <strong>Higher Secondary Certificate (HSC)</strong><br>
+        Pandit Nehru Vidyalaya, Kavalapur
+      </li>
+      <li>
+        <strong>Secondary School Certificate (SSC)</strong><br>
+        Pandit Nehru Vidyalaya, Kavalapur
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-500 mt-12 border-t pt-4">
+    &copy; 2025 Pratik Jadhav | Last updated: July 10, 2025
+  </footer>
 </body>
 </html>
-
