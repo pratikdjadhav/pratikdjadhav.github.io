@@ -1,15 +1,14 @@
-/* General Reset */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f3f4f6;
-    color: #1f2937;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -23,98 +22,76 @@ body {
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: #111827;
+    color: #1f2937;
 }
 
 header p {
-    font-size: 1.125rem;
-    color: #4b5563;
+    font-size: 1.1rem;
+    color: #6b7280;
     margin-top: 0.5rem;
 }
 
-header .flex a {
+header .contact-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+header .contact-links a {
     color: #2563eb;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-header .flex a:hover {
-    color: #1e40af;
+header .contact-links a:hover {
+    color: #1d4ed8;
     text-decoration: underline;
 }
 
 /* Section Styling */
 section {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     margin-bottom: 2rem;
 }
 
 section h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 1.8rem;
     color: #111827;
     margin-bottom: 1rem;
+    border-left: 4px solid #2563eb;
+    padding-left: 0.75rem;
 }
 
-section p, section .grid div p {
+section h3 {
+    font-size: 1.1rem;
+    color: #374151;
+    margin-top: 1rem;
+}
+
+section p {
     color: #4b5563;
-    font-size: 1rem;
 }
 
-/* Grid for Technical Skills */
+/* Skills Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.grid h3 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: #374151;
-    margin-bottom: 0.25rem;
-}
-
-/* Projects */
-section .space-y-4 > div h3 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: #374151;
-}
-
-section .space-y-4 > div p {
-    color: #4b5563;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    color: #4b5563;
-    font-size: 0.875rem;
-    padding-top: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
+    color: #6b7280;
+    margin-top: 3rem;
+    font-size: 0.9rem;
 }
